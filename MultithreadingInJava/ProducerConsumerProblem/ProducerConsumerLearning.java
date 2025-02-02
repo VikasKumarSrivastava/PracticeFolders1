@@ -23,7 +23,10 @@ public class ProducerConsumerLearning {
                 e.printStackTrace();
             }
         });
+        // System.out.println(consumer.getPriority());
+        // System.out.println(producer.getPriority());
         producer.start();
         consumer.start();
+
     }
 }
