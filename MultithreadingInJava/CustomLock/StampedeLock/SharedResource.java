@@ -16,7 +16,7 @@ public class SharedResource {
             if(lock.validate(stamp)){
                 System.out.println("Optimistic lock valid");
             }else{
-                System.out.println("Optimistic lock not valid");
+                System.out.println("Rollback");
                 a=10;
             }
         }catch(Exception e){
