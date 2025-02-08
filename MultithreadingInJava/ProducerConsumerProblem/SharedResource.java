@@ -10,7 +10,7 @@ public class SharedResource {
         this.bufferSize = bufferSize;
         queue = new LinkedList<>();
     }
-    public synchronized void produce(int item) throws InterruptedException{
+    public synchronized void produce(int item) throws Exception{
         while (queue.size()==bufferSize) {
             System.out.println("Queue is full. Producer is waiting...");
             wait();

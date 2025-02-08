@@ -8,7 +8,7 @@ public class ProducerConsumerLearning {
                 for(int i = 0; i<6;i++){
                     sharedResource.produce(i);
                 }
-            }catch(InterruptedException e){
+            }catch(Exception e){
                 e.printStackTrace();
             }
         });
