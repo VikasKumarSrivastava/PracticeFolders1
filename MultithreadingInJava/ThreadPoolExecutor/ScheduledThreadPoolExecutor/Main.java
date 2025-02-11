@@ -45,5 +45,6 @@ public class Main {
             System.out.println("Main thread, isExecutorTerminated "+ isExecutorTerminated);
         }catch(Exception e){}
 
+        System.out.println("Main thread is completed");
     }
 }
