@@ -32,6 +32,7 @@ public class Main {
         */
 
         //Scenario 3: usage of 'awaitTermination'
+        /* 
         ExecutorService executorService3 = Executors.newFixedThreadPool(5);
         executorService3.submit(()->{
             try{
@@ -42,6 +43,22 @@ public class Main {
         executorService3.shutdown();
         try{
             boolean isExecutorTerminated = executorService3.awaitTermination(3, TimeUnit.SECONDS);
+            System.out.println("Main thread, isExecutorTerminated "+ isExecutorTerminated);
+        }catch(Exception e){}
+
+        System.out.println("Main thread is completed");
+        */
+        //Scenario 4: shutdownNow()
+        ExecutorService executorService4 = Executors.newFixedThreadPool(5);
+        executorService4.submit(()->{
+            try{
+                Thread.sleep(15000);
+            }catch(Exception e){}
+            System.out.println("New task");
+        });
+        executorService4.shutdownNow();
+        try{
+            boolean isExecutorTerminated = executorService4.awaitTermination(3, TimeUnit.SECONDS);
             System.out.println("Main thread, isExecutorTerminated "+ isExecutorTerminated);
         }catch(Exception e){}
 
